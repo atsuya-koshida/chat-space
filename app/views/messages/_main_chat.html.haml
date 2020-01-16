@@ -1,0 +1,35 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box--current-group
+        LGTM
+      .main-header__left-box--member-list
+        member: lgtm
+    .main-header__edit
+      = link_to "#", class: "main-header__edit--btn" do
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        .message__upper-info--talker
+          LGTM
+        .message__upper-info--date
+          2020/1/16(Thu) 11:00:00
+      .message__text
+        LGTMが欲しくてたまらない
+    .message
+      .message__upper-info
+        .message__upper-info--talker
+          LGTM
+        .message__upper-info--date
+          2020/1/16(Thu) 11:00:00
+      .message__text
+        LGTMが欲しくてたまらない
+  .form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon("fas", "image")
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
