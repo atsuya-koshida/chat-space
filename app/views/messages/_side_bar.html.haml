@@ -25,25 +25,17 @@
       .side-header__box__user-name
         = current_user.name
       .side-header__box__menu
-        = link_to "#", class: "side-header__box__menu__new-group" do
+        = link_to new_group_path, class: "side-header__box__menu__new-group" do
           = icon('far', 'edit', class: "icon")
         = link_to edit_user_path(current_user), class: "side-header__box__menu__edit-user" do
           = icon('fas', 'cog', class: "icon")
         
 
   .groups
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません
